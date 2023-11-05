@@ -30,19 +30,3 @@ React Redux/toolkit
 React toastify
 React DnD (React Drag and Drop for sorting)
 FontAwesome (for icons)
-
-#Getting Started
-To run this app locally, follow these steps:
-Clone the repository to your local machine.
-bash
-Copy code
-git clone git@github.com:anikmahmud11/gallery-app.git
-cd react-image-gallery
-Install the dependencies.
-Copy code
-npm install
-Start the development server.
-Copy code
-npm start
-
-Open your web browser and navigate to http://localhost:3000 to view the app.
