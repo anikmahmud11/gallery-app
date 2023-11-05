@@ -36,7 +36,7 @@ To run this app locally, follow these steps:
 Clone the repository to your local machine.
 bash
 Copy code
-git clone https://github.com/your-repo.git
+git clone git@github.com:anikmahmud11/gallery-app.git
 cd react-image-gallery
 Install the dependencies.
 Copy code
