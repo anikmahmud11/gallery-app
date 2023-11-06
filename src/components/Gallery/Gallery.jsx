@@ -14,13 +14,13 @@ import "./Gallery.css";
 import { toast } from "react-toastify";
 
 const Gallery = React.memo(() => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
   const dispatch = useDispatch();
   const userProfiles = useSelector(selectUserProfiles);
   const { imageOrder, selectedImages, deleteMode } = useSelector(
     (state) => state.user
   );
-
-  const [hoveredImageIndex, setHoveredImageIndex] = useState(null);
 
   useEffect(() => {
     dispatch(fetchProductDetails());
@@ -80,6 +80,14 @@ const Gallery = React.memo(() => {
     dispatch(toggleDeleteMode());
   }, [dispatch]);
 
+  const handleFileChange = useCallback(
+    (event) => {
+      const file = event.target.files[0];
+      setSelectedFile(URL.createObjectURL(file));
+    },
+    [setSelectedFile]
+  );
+  console.log(selectedFile);
   return (
     <>
       <div data-aos="fade-up">
@@ -146,6 +154,42 @@ const Gallery = React.memo(() => {
             </div>
           </div>
         ))}
+        {selectedFile && (
+          <div className="mt-4">
+            <img
+              src={selectedFile}
+              alt="Uploaded Image"
+              className="max-w-full h-auto"
+            />
+          </div>
+        )}
+        <div class="flex justify-center items-center h-64">
+          <label class="cursor-pointer">
+            <span class="text-black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="w-8 h-8 mx-auto"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                ></path>
+              </svg>
+              <span class="block">Upload a file</span>
+            </span>
+            <input
+              type="file"
+              id="fileInput"
+              className="hidden"
+              onChange={handleFileChange}
+            />
+          </label>
+        </div>
       </div>
     </>
   );

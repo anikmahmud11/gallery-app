@@ -8,16 +8,16 @@ This is a responsive image gallery built with React JS, featuring reordering, de
 Gallery Layout
 The image gallery is designed with a grid layout to display images.
 One image is designated as the feature image, which is displayed larger than the others, creating an attractive visual contrast.
-Sorting
+#Sorting
 The gallery supports reordering functionality, allowing users to rearrange the order of images.
 Intuitive drag-and-drop functionality has been implemented for easy sorting of images.
-Deleting Multiple Images
+#Deleting Multiple Images
 Users can select multiple images for deletion.
 Selected images are visually highlighted for clarity.
-Setting Feature Image
+#Setting Feature Image
 The first image (from left to right) is considered the feature image by default.
 The feature image is visually distinct from the other images, making it easy to identify.
-User Experience
+#User Experience
 The app ensures a smooth and responsive user experience with animations and transitions for a polished look and feel.
 It is designed to be fully responsive for various screen sizes, ensuring that it works well on both desktop and mobile devices.
 
